@@ -11,10 +11,11 @@ var strStr = function(haystack, needle) {
     let hlen = haystack.length;
     for(i=0;i<=hlen-nlen;i++){
         if(haystack.substring(i,i+nlen)===needle){
-            return i ;
+            return i   ;
         }
        
     };
      return -1
 
 };
+// dolat jangir

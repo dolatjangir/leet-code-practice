@@ -3,47 +3,31 @@
  * @return {boolean}
  */
 var isValid = function(s) {
-    let smallS = 0;
-    let smallC = 0;
-    let midS = 0;
-    let midC = 0;
-    let curlyS = 0;
-    let curlyC = 0;
-    for (i=0;i<s.length;i++){
-        if (s[i] == "(") {
-        smallS++
-};
-if (s[i] == ")") {
-	smallC++
-	};
-    	if (s[i] == "{") {
-midS++
-}
-
-
-if (s[i] == "}") {
-	midC++
-	};
-    	if (s[i] == "[") {
-curlyS++
-}
-
-
-if (s[i] == "]") {
-	curlyC++
-	};
-    if ((smallC > smallS) || (midC > midS) || (curlyC > curlyS) ) {
-		return false 
-	}
-	continue
-
-
-if ((smallC == smallS) && (midC == midS) && (curlyC == curlyS)) {
-	return true
-}
-
-return false
-
+    let smallS = "(";
+    let smallC = ")";
+    let curlyS = "{";
+    let curlyC = "}";
+     let squreS = "[";
+    let squreC = "]"; 
+    const arr = [];
+    const m = s.length % 2
+    if(m === 1){
+        return false;
+    };
+    for(i=0;i<s.length;i++){
+        if((smallS === s[i])||(curlyS === s[i])||(squreS===s[i])){
+            arr.push(s[i]);
+            continue;
+        };
+        const item = arr.pop();
+        if((item === smallS && s[i]=== smallC)||(item===curlyS && s[i]===curlyC)||(item===squreS && s[i]===squreC)){
+            continue
+        } 
+            return false
+        
     }
 
-};    azdyFUJGKI
+    return arr.length == 0 
+};
+
+console.log(isValid("([)]"), "outer")

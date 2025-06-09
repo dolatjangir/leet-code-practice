@@ -17,7 +17,7 @@ const node4 = new ListNode(4);
 
 head.next = node2;
 node2.next = node3;
-node3.next = node4;
+node3.next = node4; 
 var deleteMiddle = function(head) {
     if(head == null || head.next == null){
         return head;

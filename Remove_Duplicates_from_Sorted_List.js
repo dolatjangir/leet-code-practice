@@ -1,9 +1,9 @@
-class ListNode{
-    constructor(data){
-this.val = data;
-this.next = null;
-    }
-};
+// class ListNode{
+//     constructor(data){
+// this.val = data;
+// this.next = null;
+//     }
+// };
 
 //function to build a linked list from an array
 function buildList(arr){
